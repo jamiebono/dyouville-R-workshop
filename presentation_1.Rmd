@@ -1,0 +1,154 @@
+---
+title: "“Up and Running” with R"
+author: "Jamie Bono"
+date: "1/10/2018"
+output:
+  ioslides_presentation: default
+  beamer_presentation: default
+  slidy_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Hi, I'm A Workshop About R.
+
+"R is a language and environment for statistical computing and graphics." - [R Project for Statistical Computing](https://www.r-project.org/about.html) 
+
+R is commonly used in many scientific disciplines for statistical analysis. The goal of this workshop is to introduce non-programmers to R and best practices for using R to develop data analyses. 
+
+## Skills Agenda
+
+- Set up some core tools:
+    - <https://www.r-project.org>
+    - <https://www.rstudio.com>
+- Anatomy of an analytics project in R
+    - Create a project
+    - Import some data
+    - Explore descriptive statistcs
+    - Plot exploratory data visualizations
+    - Save and share results
+    
+    ...rinse, repeat...
+
+## Topics Covered
+
+- The data analysis lifecycle
+- "Tidy" data
+- Know your file system
+- Introduction to datatypes
+- Objects & functions
+- A Grammar of graphics
+
+## Topics Not Covered
+
+*This workshop focuses on teaching the fundamentals of R and does not teach statistical analysis.*
+
+*Anything other than "rectangular" data structures*
+
+*Python, SQL, Excel, SAS, SPSS, Stata (although we will talk about them)*
+
+## Why Program at All?
+
+Programming supports data analyses that are:
+
+- Deliberate
+    - Your analyses follows a process that is visible after the fact
+- Reproducible
+    - Your analysis can be recreated by others (or yourself) at a later date
+- Transferable
+    - Your analysis can be shared with others
+- Scalable
+    - Analyses can be used on data that are increasingly complex and/or large
+    
+## Because We're Lazy & Forgetful
+
+### Don't Repeat Yourself (or others, for that matter)
+
+### Write data for machines;
+
+### Write code for humans
+
+```{r echo=TRUE, eval=FALSE}
+# This is a code comment
+# It is used to explain something or put information that the 
+# computer should ignore
+```
+
+## Why Program in R?
+
+- R is widely adopted and has a supportive community
+- R is extensible with over 15,000 packages
+- R is free as in beer *and* free as in speech
+
+## R Plays Well With Others
+
+- haven for importing and exporting data from SAS, SPSS and Stata
+- readxl for working with Microsoft Excel files
+- DBI for interacting with databases
+- httr for working with data on the web
+
+## R for Data Science (R4DS)
+
+[*R for Data Science*](http://r4ds.had.co.nz/) by Hadley Wickham
+
+```{r}
+knitr::include_graphics("data/images/cover.png")
+```
+
+## "Nouns" & "Verbs"
+
+A grammar of data analysis includes "nouns" and "verbs": objects and functions
+
+### Objects *are* Things
+
+- vectors
+- atomic values
+- dataframes
+- libraries
+- lists
+- files
+- functions
+
+## "Nouns" & "Verbs"
+
+A grammar of data analysis includes "nouns" and "verbs": objects and functions
+
+### Functions *act on* Objects and Return Results
+
+```{r echo=TRUE, eval=FALSE}
+- filter()
+- mean()
+- gather()
+- lm()
+- plot()
+- str()
+```
+
+## "Nouns" & "Verbs"
+
+A grammar of data analysis includes "nouns" and "verbs": objects and functions
+
+### Functions *act on* Objects and Return Results
+
+```{r echo=TRUE, eval=TRUE}
+# Creates a vector using c(), note coercion of variables
+foo <- c(1, 2, TRUE, 3.5, 33, 2.1)
+str(foo)
+```
+```{r echo=TRUE, eval=TRUE}
+# Creates a vector using c(), note coercion of variables
+foo <- c(1, 2, "TRUE", 3.5, 33, 2.1)
+str(foo)
+```
+## Nouns & Verbs
+
+A grammar of data analysis includes nouns and verbs, objects and actions
+
+### Functions *act on* Objects and Return Results
+```{r echo=TRUE, eval=TRUE}
+# Creates a list, which can hold multiple data types
+bar <- list(1, 2, TRUE, "Jamie")
+str(bar)
+```
